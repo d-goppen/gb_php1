@@ -15,7 +15,7 @@ echo "<h2>{$header}" . $taskNum++ . "</h2>";
 $a = mt_rand(-10000, 10000);
 $b = mt_rand(-10000, 10000);
 echo "<p>\$a = {$a}; \$b = {$b}</p><p>Результат: ";
-if (($a > 0) && ($b > 0)) {
+if (($a >= 0) && ($b >= 0)) {
     echo "\$a - \$b = " . ($a - $b) . "</p>";
 } elseif (($a < 0) && ($b < 0)) {
     echo "\$a * \$b = " . ($a * $b) . "</p>";
@@ -43,7 +43,7 @@ switch ($a) {
     case 12: echo '12, ';
     case 13: echo '13, ';
     case 14: echo '14, ';
-    case 15: echo '15<p>';
+    case 15: echo '15.<p>';
 };
 
 // Задача 3
@@ -95,14 +95,14 @@ $b = mt_rand(2, 10); // Диапазон ограничен специально
 echo "<p>\$a = {$a}; \$b = {$b}</p><p>Результат: {$a}<sup>{$b}</sup> = " . power($a, $b) . "</p>";
 echo '<div style="display: flex; font-family: monospace;">';
 echo '<div style="padding: .5em;">
-      function <b>power</b>($arg, $index)<br>{<br>&nbsp;&nbsp;if ($index === 1) {<br>
+      function <b>power</b>($arg, $index)<br>{<br>&nbsp;&nbsp;if ($index <= 1) {<br>
       &nbsp;&nbsp;&nbsp;&nbsp;return $arg;<br>&nbsp;&nbsp;} else {<br>
-      &nbsp;&nbsp;&nbsp;&nbsp;return $arg * power($arg, --$index);<br>&nbsp;&nbsp;};<br>}</div></div>';
+      &nbsp;&nbsp;&nbsp;&nbsp;return $arg * power($arg, $index - 1);<br>&nbsp;&nbsp;};<br>}</div></div>';
 function power($arg, $index) {
-  if ($index === 1) {
+  if ($index <= 1) {
     return $arg;
   } else {
-    return $arg * power($arg, --$index);
+    return $arg * power($arg, $index - 1);
   };
 };
   
