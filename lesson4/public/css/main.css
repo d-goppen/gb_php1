@@ -1,0 +1,92 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background-color: darkslategray;
+}
+
+.galleryPane {
+    box-sizing: border-box;
+    display: flex;
+    flex-wrap: wrap;
+    background: transparent;
+    padding: 1rem;
+}
+
+.pictureThumbContainer,
+.pictureThumbButton {
+    background: transparent;
+    border: solid darkgray 0px;
+    border-radius: 8px;
+    padding: 5px;
+    margin: .5rem;
+    height: 100px;
+    width: 100px;
+    display: flex;
+    box-shadow: inset 0px 0px 3px black;
+    color: darkgray;
+}
+
+.pictureThumbContainer:hover,
+.pictureThumbButton:hover {
+    box-shadow: inset 0px 0px 3px lightgray;
+}
+
+.pictureThumbContainer:active,
+.pictureThumbButton:active {
+    box-shadow: inset 0px 0px 3px lightgray, 0px 0px 3px lightgray;
+}
+
+.pictureThumb {
+    margin: auto;
+    max-width: 100px;
+    max-height: 100px;
+}
+
+.formCaption {
+    font-weight: bold;
+    font-size: 1.5rem;
+    margin: .5rem;
+}
+
+form {
+    margin: .5rem;
+}
+
+.modal-picture {
+    background-color: rgba(2F, 4F, 4F, 1);
+    /*background-color: darkslategray;
+    filter: opacity(80%);*/
+    display: none;
+    align-items: center;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.fullPicture {
+    position: relative;
+    margin: auto;
+    filter: opacity(100%);
+    max-width: 90%;
+    max-height: 90%;
+}
+
+.modal-close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.modal-close:hover,
+.modal-close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
